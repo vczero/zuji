@@ -1,6 +1,5 @@
 //管理员模型
 var Admin = function (option){
-
 	this.nickname = '';//昵称
 	this.password = '';//密码，MD5加密
 	this.userid = '';//自动生成
