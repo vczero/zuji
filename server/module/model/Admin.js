@@ -1,10 +1,17 @@
 //管理员模型
 var Admin = function (option){
-	this.nickname = option.nickname;//昵称
-	this.password = option.password;//密码，MD5加密
-	this.userid = '';//自动生成
-}
 
+	this.nickname = '';//昵称
+	this.password = '';//密码，MD5加密
+	this.userid = '';//自动生成
+	this.date = new Date();//创建时间
+
+	if(option){
+		this.nickname = option.nickname || '';
+		this.password = option.password || '';
+	}
+	
+}
 
 //Admin原型方法
 Admin.prototype = {
@@ -18,5 +25,9 @@ Admin.prototype = {
 
 	getNickname: function(){
 		return this.nickname;
+	},
+
+	getDate: function(){
+		return this.date;
 	}
 };

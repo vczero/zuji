@@ -1,10 +1,17 @@
 
 //用户模型
 var User = function(option){
-	this.email = option.email;//邮件
-	this.nickname = option.nickname;//昵称
-	this.password = option.password;//密码，MD5加密
+	this.email = '';//邮件
+	this.nickname = '';//昵称
+	this.password = '';//密码，MD5加密
 	this.userid = '';//自动生成
+	this.date = new Date();//创建时间
+
+	if(option){
+		this.email = option.email || '';
+		this.nickname = option.nickname || '';
+		this.password = option.password || '';
+	}
 }
 
 
@@ -28,5 +35,9 @@ User.prototype = {
 
 	getNickname: function(){
 		return this.nickname;
+	},
+
+	getDate: function(){
+		return this.date;
 	}
 };
