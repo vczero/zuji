@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta chartset="UTF-8" />
+    <title>Blog</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <style type="text/css">
+		nav span{
+			display: block;
+			margin-top: 10px;
+		}
+
+		nav span a{
+			color: #000;
+		}
+
+		nav span a:link{
+			text-decoration: none;
+		}
+		header h1{
+			display: block;
+			margin-left: 250px;
+		}
+    </style>
+  </head>
+  <body>
+ 
+	<header>
+		<h1><%= title %></h1>
+	</header>
+	<nav>
+		<span><a title="主页" href="/">主页</a></span>
+		<span><a title="登录" href="/login">登录</a></span>
+		<span><a title="注册" href="/reg">注册</a></span>
+	</nav>
+	<article>
+

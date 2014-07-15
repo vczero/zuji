@@ -11,6 +11,7 @@ var path = require('path');
 
 var MongoStore = require('connect-mongo')(express); //本地存储中间件
 var settings = require('./settings');
+var flash = require('connect-flash');
 
 var app = express();
 
@@ -20,6 +21,8 @@ app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.favicon());
+
+app.use(flash());
 
 //app.use(express.favicon(_dirname + '/public/images/favicon.ico'))
 app.use(express.logger('dev'));
