@@ -23,6 +23,7 @@ module.exports = function(app){
 	});
 
 	app.post('/reg', function(req, res){
+		
 		var name = req.body.username;
 		var password = req.body.password;
 		var passwordRepeat = req.body.password_repeat;
@@ -54,7 +55,7 @@ module.exports = function(app){
 				}
 
 				req.session.user = user;//用户信息放入session
-				req.flash('success', '注册成功');
+				// req.flash('success', '注册成功');
 				res.redirect('/');//定向回首页
 			});
 		});
