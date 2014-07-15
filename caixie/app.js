@@ -5,9 +5,12 @@
 
 var express = require('express');
 var routes = require('./routes');
-var user = require('./routes/user');
+// var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
+
+var MongoStore = require('connect-mongo')(express); //本地存储中间件
+var settings = require('./settings');
 
 var app = express();
 
@@ -27,14 +30,31 @@ app.use(express.methodOverride());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+//cookie和session支持
+app.use(express.cookieParser());
+//会话支持
+app.use(express.session({
+	secret: settings.cookieKey,
+	key: settings.db, //cookie name
+	cookie: {maxAge:1000*60*60*24*30}, //30天过期
+	store: new MongoStore({
+		db: settings.db
+	})
+
+}));
+
 // development only
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
-app.get('/users', user.list);
+// app.get('/', routes.index);
+// app.get('/users', user.list);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
+
+routes(app);
