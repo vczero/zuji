@@ -47,5 +47,21 @@ User.get = function(name, callback){
 		if (err) {
 			return callback(err);
 		}
+
+		db.collection('users', function(err, collection){
+			if (err) {
+				mongodb.close();
+				return callback(err);
+			}
+
+			collection.findOne({name: name}, function(err, user){
+				mongodb.close();
+				if(err){
+					return callback(err);
+				}
+
+				callback(null, user);
+			});
+		});
 	});
 };
