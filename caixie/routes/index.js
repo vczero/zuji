@@ -29,35 +29,41 @@ module.exports = function(app){
 		var passwordRepeat = req.body.password_repeat;
 
 		if(password !== passwordRepeat){
-			req.flash('error', '两次输入的密码不一致，请重新输入。');
+			// req.flash('error', '两次输入的密码不一致，请重新输入。');
+			console.log('两次输入的密码不一致');
 			return res.redirect('/reg'); //定向回注册页面
 		}
 
 		var md5 = crypto.createHash('md5');
 		password = md5.update(req.body.password).digest('hex');
-
 		var newUser = new User({
 			name: req.body.username,
-			password: req.body.password,
+			password: password,
 			email: req.body.email
 		});
 
 		User.get(newUser.name, function(err, user){
+
 			if(user){
-				req.flash('error', '用户已存在');
+				// req.flash('error', '用户已存在');
+				console.log('用户已存在');
 				return res.redirect('/reg');
 			}
 
 			newUser.save(function(err, user){
 				if(err){
-					req.flash('error', err);
+					// req.flash('error', err);
+					console.log('服务出错');
 					return res.redirect('/reg');
 				}
+				console.log(user);
 
 				req.session.user = user;//用户信息放入session
 				// req.flash('success', '注册成功');
+				console.log('注册成功');
 				res.redirect('/');//定向回首页
 			});
+
 		});
 	});
 

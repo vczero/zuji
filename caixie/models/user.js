@@ -18,7 +18,6 @@ User.prototype.save = function(callback){
 	};
 
 	mongodb.open(function(err, db){
-
 		if (err) {
 			return callback(err);
 		}
