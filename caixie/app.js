@@ -20,6 +20,7 @@ app.set('port', process.env.PORT || 3000);
 //___dirname全局变量，存储当前正在执行脚本所在目录
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(flash());
 app.use(express.favicon());
 
 
@@ -29,11 +30,11 @@ app.use(express.bodyParser());
 // app.use(express.json());
 // app.use(express.urlencoded());
 app.use(express.methodOverride());
-app.use(app.router);
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use(flash());
+
 //cookie和session支持
 app.use(express.cookieParser());
 //会话支持
@@ -47,7 +48,7 @@ app.use(express.session({
 
 }));
 
-
+app.use(app.router);
 
 // development only
 if ('development' == app.get('env')) {
