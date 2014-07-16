@@ -5,6 +5,7 @@
 
 var crypto = require('crypto'),
 	User = require('../models/user.js');
+	Post = require('../models/post.js');
 
 /*
 	req.query:处理get请求，获取请求参数
@@ -17,12 +18,22 @@ module.exports = function(app){
 	var success = '';
 	var error = '';
 	app.get('/', function(req, res){
-		res.render('index', { 
-			title: '主页' ,
-			user: req.session.user,
-			success: success.toString(),
-			error: error.toString()
+
+		Post.get(null, function(err, posts){
+
+			if(err){
+				posts = [];
+			}
+
+			res.render('index', { 
+				title: '主页' ,
+				user: req.session.user,
+				posts: posts,
+				success: success.toString(),
+				error: error.toString()
+			});
 		});
+
 	})
 
 //--------------------------------------------------------
@@ -124,8 +135,27 @@ module.exports = function(app){
 		});
 	});
 	app.get('/post', checkLogin);
-	app.post('/post', function(req,res){});
+	app.post('/post', function(req,res){
+		var currUser = req.session.user;
+		var post = new Post({
+			name: currUser.name,
+			title: req.body.title,
+			post: req.body.post
+		});
 
+		post.save(function(err){
+			if(err){
+				error = '发表文章错误';
+				return res.redirect('/');
+			}
+
+			success = '发表文章错误';
+			res.redirect('/');
+		});
+	});
+
+
+//--------------------------------------------------------
 	app.get('/logout', checkLogin);
 	app.get('/logout', function(req ,res){
 		req.session.user = '';
