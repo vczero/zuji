@@ -25,6 +25,8 @@ module.exports = function(app){
 		});
 	})
 
+//--------------------------------------------------------
+	app.get('/reg', checkNotlogin);
 	app.get('/reg', function(req, res){
 		res.render('reg', { 
 			title: '注册' ,
@@ -33,7 +35,7 @@ module.exports = function(app){
 			error: error.toString()
 		});
 	});
-
+	app.post('/reg', checkNotlogin);
 	app.post('/reg', function(req, res){
 		var name = req.body.username;
 		var password = req.body.password;
@@ -76,6 +78,9 @@ module.exports = function(app){
 		});
 	});
 
+
+//--------------------------------------------------------
+	app.get('/login', checkNotlogin);
 	app.get('/login', function(req, res){
 		res.render('login', { 
 			title: '登录',
@@ -84,7 +89,7 @@ module.exports = function(app){
 			error: error.toString()
 		});
 	});
-
+	app.post('/login', checkNotlogin);
 	app.post('/login', function(req, res){
 		var md5 = crypto.createHash('md5');
 		var password = md5.update(req.body.password).digest('hex');
@@ -107,12 +112,21 @@ module.exports = function(app){
 
 	});
 
-	app.get('/post', function(req, res){
-		res.render('post', { title: '发表'});
-	});
 
+//--------------------------------------------------------
+	app.get('/post', checkLogin);
+	app.get('/post', function(req, res){
+		res.render('post', { 
+			title: '发表',
+			user: req.session.user,
+			success: success.toString(),
+			error: error.toString()
+		});
+	});
+	app.get('/post', checkLogin);
 	app.post('/post', function(req,res){});
 
+	app.get('/logout', checkLogin);
 	app.get('/logout', function(req ,res){
 		req.session.user = '';
 		success = '退出成功！';
@@ -123,5 +137,25 @@ module.exports = function(app){
 	app.get('/show', function(req,res){
 		res.send('hello world!');
 	})
+
+
+	function checkLogin(req, res, next){
+		if(!req.session.user){
+			error = '未登录';
+			res.redirect('/login');
+		}
+
+		next();
+	}
+
+
+	function checkNotlogin(req, res, next){
+		if(req.session.user){
+			success = '已登录';
+			res.redirect('back');//返回之前页面
+		}
+
+		next();
+	}
 
 };
