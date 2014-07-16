@@ -149,7 +149,7 @@ module.exports = function(app){
 				return res.redirect('/');
 			}
 
-			success = '发表文章错误';
+			success = '发表文章成功';
 			res.redirect('/');
 		});
 	});
