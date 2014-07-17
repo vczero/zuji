@@ -30,7 +30,7 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser({
 	keepExtensions: true,
 	uploadDir: './public/images',
-	limit: '2000mb'
+	limit: '10mb'
 }));
 // app.use(express.json());
 // app.use(express.urlencoded());

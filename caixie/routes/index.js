@@ -20,7 +20,7 @@ module.exports = function(app){
 	var error = '';
 	app.get('/', function(req, res){
 
-		Post.get(null, function(err, posts){
+		Post.getAll(null, function(err, posts){
 
 			if(err){
 				posts = [];
