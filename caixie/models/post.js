@@ -1,5 +1,8 @@
-var mongodb = require('./db'),
+// var mongodb = require('./db'),
+var mongodb = require('mongodb').Db;
     markdown = require('markdown').markdown;
+
+var setttings = require('../settings');
 
 
 
@@ -23,14 +26,14 @@ Post.prototype.save = function(callback){
 	};
 
 
-	mongodb.open(function(err, db){
+	mongodb.connect(setttings.url,function(err, db){
 		if(err){
 			return callback(err);
 		}
 
 		db.collection('posts', function(err, collection){
 			if(err){
-				mongodb.close();
+				db.close();
 				return callback(err);
 			}
 
@@ -48,14 +51,14 @@ Post.prototype.save = function(callback){
 
 
 Post.getAll = function(name, callback){
-	mongodb.open(function(err, db){
+	mongodb.connect( setttings.url, function(err, db){
 		if(err){
 			return callback(err);
 		}
 
 		db.collection('posts', function(err, collection){
 			if(err){
-				mongodb.close();
+				db.close();
 				return callback(err);
 			}
 
@@ -65,7 +68,7 @@ Post.getAll = function(name, callback){
 			}
 
 			collection.find(query).sort({ time: -1}).toArray(function(err, docs){
-				mongodb.close();
+				db.close();
 
 				if(err){
 					return callback(err);
@@ -84,14 +87,14 @@ Post.getAll = function(name, callback){
 
 
 Post.getOne = function(name, day, title, callback){
-	mongodb.open(function(err, db){
+	mongodb.connect(setttings.url, function(err, db){
 		if(err){
 			return callback(err);
 		}
 
 		db.collection('posts', function(err, collection){
 			if(err){
-				mongodb.close();
+				db.close();
 				return callback(err);
 			}
 
@@ -100,7 +103,7 @@ Post.getOne = function(name, day, title, callback){
 				"time": day,
 				"title": title
 			}, function(err, doc){
-				mongodb.close();
+				db.close();
 				if(err){
 					return callback(err);
 				}

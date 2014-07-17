@@ -45,11 +45,12 @@ app.use(express.cookieParser());
 //会话支持
 app.use(express.session({
 	secret: settings.cookieKey,
-	key: settings.db, //cookie name
+	//key: settings.db, //cookie name
 	cookie: {maxAge:1000*60*60*24*30}, //30天过期
-	store: new MongoStore({
-		db: settings.db
-	})
+	url:settings.url
+	// store: new MongoStore({
+	// 	db: settings.db
+	// })
 
 }));
 
@@ -67,5 +68,5 @@ http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
-
+console.log("------------------------------------------------");
 routes(app);
