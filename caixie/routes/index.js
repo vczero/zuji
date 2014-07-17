@@ -4,6 +4,7 @@
  */
 
 var crypto = require('crypto'),
+	fs = require('fs'),
 	User = require('../models/user.js');
 	Post = require('../models/post.js');
 
@@ -166,7 +167,39 @@ module.exports = function(app){
 
 	app.get('/show', function(req,res){
 		res.send('hello world!');
-	})
+	});
+
+//----------------------------------------------------------------
+	app.get('/upload', checkLogin);
+	app.get('/upload',function(req, res){
+		res.render('upload', {
+			title: '文件上传',
+			user: req.session.user,
+			success: success,
+			error: error
+		});
+	});
+
+	app.post('/upload', checkLogin);
+	app.post('/upload', function(req, res){
+		for(var i in req.files){
+			if(req.files[i].size === 0){
+				fs.unlinkSync(req.files[i].path);
+				console.log('成功删除空文件');
+			}else{
+				var tpath = './public/images/' + req.files[i].name;
+				fs.renameSync(req.files[i].path, tpath);
+				console.log('成功重命名一文件');
+			}
+		}
+
+		success = '文件成功上传';
+		res.redirect('/upload');
+
+	});
+
+
+
 
 
 	function checkLogin(req, res, next){

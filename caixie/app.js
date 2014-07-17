@@ -26,7 +26,12 @@ app.use(express.favicon());
 
 //app.use(express.favicon(_dirname + '/public/images/favicon.ico'))
 app.use(express.logger('dev'));
-app.use(express.bodyParser());
+//app.use(express.bodyParser());//解析请求体
+app.use(express.bodyParser({
+	keepExtensions: true,
+	uploadDir: './public/images',
+	limit: '2000mb'
+}));
 // app.use(express.json());
 // app.use(express.urlencoded());
 app.use(express.methodOverride());
