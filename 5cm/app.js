@@ -14,6 +14,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.favicon(__dirname + 'public/images/favicon.ico'));
 app.use(express.logger('dev'));
+
 // app.use(express.json());
 // app.use(express.urlencoded());
 app.use(express.methodOverride());
@@ -39,3 +40,5 @@ if ('development' == app.get('env')) {
 http.createServer(app).listen(app.get('port'), function(){
   console.log('5厘米的服务已经启动，秒速5cm。监听： ' + app.get('port'));
 });
+
+routes(app);
