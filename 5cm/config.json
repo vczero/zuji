@@ -1,0 +1,9 @@
+{
+	"db":{
+		"name": "5cm",
+		"psw": "5cm-s-bein0.000049",
+		"url": "mongodb://127.0.0.1:27017/5cm"
+	},
+
+	"cookiekey":"s-5cm-5cm-s"
+}
