@@ -3,7 +3,7 @@ var express = require('express'),
     http = require('http'),
     path = require('path'),
     MongoStore = require('connect-mongo')(express),
-    routes = require('./routes'),
+    route = require('./routes/route'),
     config = require('./config');
 
 
@@ -12,7 +12,7 @@ var app = express();
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(express.favicon(__dirname + 'public/images/favicon.ico'));
+app.use(express.favicon(__dirname + '/public/images/5.png'));
 app.use(express.logger('dev'));
 
 // app.use(express.json());
@@ -22,7 +22,7 @@ app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.bodyParser({
 	keepExtensions: true,
-	uploadDir: './public/images',
+	uploadDir: './public/upload',
 	limit: '10mb'
 }));
 app.use(express.cookieParser());
@@ -41,4 +41,4 @@ http.createServer(app).listen(app.get('port'), function(){
   console.log('5厘米的服务已经启动，秒速5cm。监听： ' + app.get('port'));
 });
 
-routes(app);
+route(app);

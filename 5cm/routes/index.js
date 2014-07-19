@@ -1,17 +1,18 @@
+/*
+	主页相关功能
+*/
+var index = {};
 
-
-
-
-
-module.exports = {
-	xx: ff
-}
-
- function ff (app) {
-	app.get('...',function(req,res){
-
+index.index = function(req, res){
+	res.render('header', {
+		title: '王利华'
 	});
-}
+};
+
+
+module.exports = index;
+
+
 
 
 

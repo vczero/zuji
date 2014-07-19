@@ -1,0 +1,114 @@
+body{
+	font-size: 13px;
+	margin: 0;
+	color: #D3D3D3;
+}
+
+
+a:link{
+	text-decoration: none;
+}
+
+
+.shadow{
+	box-shadow: 0 3px 2px #3B3B3B;
+}
+
+.cursor{
+	cursor: pointer;
+}
+
+.main_min_height{
+	min-height: 600px;
+}
+
+.main_top_bottom{
+	top: 0;
+	bottom: 0;
+	position: absolute;
+}
+
+.nav{
+	background-color: #1C1817;
+	width: 60px;
+	left: 0;
+	border-right:1px solid #3B3B3B;
+}
+
+.list{
+	background-color: #1E1E1E;
+	width: 295px;
+	left: 61px;
+	position: absolute;
+}
+
+.mapdiv{
+	background-color: #808080;
+	left: 355px;
+	right: 0;
+	min-width: 800px;
+}
+
+.map{
+	position: absolute;
+	top: 100px;
+	left: 65px;
+	right: 65px;
+	bottom: 30px;
+	background-color: #FFF;
+}
+
+.icon{
+	width: 50px;
+	height: 50px;
+}
+
+.icon_margin{
+	margin-left: 4px;
+	margin-top: 10px;
+}
+
+.icon_pos{
+	position: absolute;
+	left: 4px;
+	bottom: 62px;
+}
+
+.logodiv{
+	width: 200px;
+	height: 50px;
+}
+
+.floatl{
+	float: left;
+}
+
+.floatr{
+	float: right;
+}
+
+.logo{
+	width: 100px;
+	height: 50px;
+}
+
+.display_inline{
+	display: inline;
+}
+
+.logo_margin{
+	margin-top: 25px;
+	margin-left: 70px;
+}
+
+.logoname{
+	position: absolute;
+	top: 45px;
+}
+
+.logoname span{
+	margin-left: 7px;
+	font-size: 14px;
+	/*font-weight: bold;*/
+	/*color: #CCA604;*/
+}
