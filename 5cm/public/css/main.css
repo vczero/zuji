@@ -9,8 +9,6 @@ a:link{
 	text-decoration: none;
 }
 
-
-
 .shadow{
 	box-shadow: 0 3px 2px #3B3B3B;
 }
@@ -118,9 +116,10 @@ a:link{
 	top: 45px;
 }
 
-.logoname span{
-	margin-left: 7px;
-	font-size: 14px;
+.logo_title{
+	height: 40px;
+	margin-top:-15px;
+	margin-left: -5px;
 }
 
 .list_width{
