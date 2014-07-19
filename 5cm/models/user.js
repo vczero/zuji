@@ -45,13 +45,6 @@ User.prototype.createUser = function(callback){
 
 
 /*
-  生成一个随机密码
-*/
-User.createPassword = function(){
-
-};
-
-/*
   查询用户
 */
 User.getUser = function(name, callback){
