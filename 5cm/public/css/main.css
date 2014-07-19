@@ -121,7 +121,19 @@ a:link{
 .logoname span{
 	margin-left: 7px;
 	font-size: 14px;
-	/*font-weight: bold;*/
-	/*color: #CCA604;*/
+}
+
+.list_width{
+	width: 295px;
+}
+
+.list_header{
+	background-color: #000000;
+	height: 40px;
+}
+
+.signal{
+	height: 27px;
+	background-color: #444444; 
 }
 

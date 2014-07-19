@@ -4,7 +4,7 @@
 var index = {};
 
 index.index = function(req, res){
-	res.render('header', {
+	res.render('index', {
 		title: '王利华'
 	});
 };
