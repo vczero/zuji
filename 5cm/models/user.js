@@ -1,5 +1,6 @@
 
 var mongo = require('../utils/mongo');
+var mcrypto = require('../utils/mcrypto');
 /*
 +--------------------------------------
 用户模型
