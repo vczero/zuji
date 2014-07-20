@@ -1,17 +1,12 @@
 <!--加载导航功能菜单-->
 <%- include nav %>
 
-
 <!--加载列表页面-->
 <% if(!user) {%>
-	<%- include list_login %>
+	<%- include login %>
 <% }else{ %>
 	<%- include list_user %>
 <% } %>
-
-
-
-
 
 <!--加载地图功能页面-->
 <%- include map %>
