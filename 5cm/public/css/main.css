@@ -30,7 +30,7 @@ a:link{
 	background-color: #1C1817;
 	width: 60px;
 	left: 0;
-	border-right:1px solid #3B3B3B;
+	border-right:1px solid #454545;
 }
 
 .list{
@@ -100,7 +100,7 @@ a:link{
 }
 
 .display_inline{
-	display: inline;
+	display: inline-block;
 }
 
 .logo_margin{
@@ -109,9 +109,18 @@ a:link{
 }
 
 .logoname{
-	position: absolute;
-	top: 45px;
+	height: 20px;
+	width: 90px;
+	margin-top: 23px;
+	font-family: '黑体';
+	font-size: 15px;
 }
+
+
+a:link {color: #D3D3D3}		
+a:visited {color: #D3D3D3}	
+a:hover {color: #FFF}	
+
 
 .logo_title{
 	height: 40px;
@@ -131,6 +140,10 @@ a:link{
 .signal{
 	height: 27px;
 	background-color: #444444; 
+}
+
+.signal_img{
+	height: 27px;
 }
 
 .list_header_title{
@@ -184,6 +197,6 @@ input{
 	margin-top: 5px;
 	color: #FFF;
 	width: 45px;
-	background-color: #168FE6;
+	background-color: #007ACC;
 	margin-left: 150px;
 }
