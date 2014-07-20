@@ -4,6 +4,10 @@ body{
 	color: #D3D3D3;
 }
 
+img{
+	border: 0; /*针对IE*/
+}
+
 a:link{
 	text-decoration: none;
 }

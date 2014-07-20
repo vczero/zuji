@@ -30,7 +30,7 @@ app.use(express.session({
 	secret: config.cookiekey,
 	key: config.db.name, 
 	cookie: {maxAge:1000*60*60*24*7}, //一周过期
-	url:config.db.url
+	// url:config.db.name
 }));
 
 app.use(app.router);
