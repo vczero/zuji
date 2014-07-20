@@ -5,7 +5,7 @@ var	Connection = require('mongodb').Connection;
 
 
 
-var server = new Server(config.db.host,config.port, {
+var server = new Server(config.db.host,Connection.DEFAULT_PORT, {
 	safe: true
 });
 

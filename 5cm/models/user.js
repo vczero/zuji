@@ -58,7 +58,7 @@ User.getUser = function(name, callback){
 				mongo.close();
 				return callback(error);
 			}
-			collection.find({name: name}, function(error, item){
+			collection.findOne({name: name}, function(error, item){
 				mongo.close();
 				if(error){
 					return callback(error);

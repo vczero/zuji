@@ -4,6 +4,7 @@ var express = require('express'),
     path = require('path'),
     MongoStore = require('connect-mongo')(express),
     route = require('./routes/route'),
+    rest = require('./rest/rest');
     config = require('./config');
 
 
@@ -18,7 +19,6 @@ app.use(express.logger('dev'));
 // app.use(express.json());
 // app.use(express.urlencoded());
 app.use(express.methodOverride());
-app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.bodyParser({
 	keepExtensions: true,
@@ -33,6 +33,8 @@ app.use(express.session({
 	url:config.db.url
 }));
 
+app.use(app.router);
+
 if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
@@ -42,3 +44,4 @@ http.createServer(app).listen(app.get('port'), function(){
 });
 
 route(app);
+rest(app);

@@ -5,7 +5,7 @@ var index = {};
 
 index.index = function(req, res){
 	res.render('index', {
-		title: '5厘米',
+		title: '秒速5厘米',
 		user: null
 	});
 };

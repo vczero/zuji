@@ -13,5 +13,4 @@ module.exports = function(app){
 	app.get('/story', index.story);
 	app.get('/5cm', index.fivecm);
 	app.get('/about', index.about);
-
 };
