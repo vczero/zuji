@@ -18,7 +18,31 @@
     <script type="text/javascript" src="js/sea2.3.js"></script>
     <script type="text/javascript">
     	$(function(){
-    		
+    		$('#btn_register').click(function(){
+    			var name = $("#username").val();
+    			var password = $("#password").val();
+    			var password_re = $("#password_re").val();
+    			var email = $("#email").val();
+
+    			var params = {
+    				username: name,
+    				password: password,
+    				password_re: password_re,
+    				email: email
+    			};
+
+    			if(name && password && password_re && email){
+    				$.post('/user/create', params, function(data){
+	    				if(data.code === '1'){
+	    					alert("注册成功");
+	    				}else{
+	    					alert("用户名已存在或者密码不一致");
+	    				}
+	    			});
+    			}else{
+    				alert("不能为空");
+    			}
+    		});
     	});
     </script>
 </html>

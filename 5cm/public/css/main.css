@@ -24,6 +24,10 @@ a:link{
 	min-height: 600px;
 }
 
+.padding8px{
+	padding-left: 8px;
+}
+
 .main_top_bottom{
 	top: 0;
 	bottom: 0;
