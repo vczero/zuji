@@ -25,4 +25,17 @@ Mcrypto.md5Password = function(password){
 	return newPsw;
 };
 
+/*
+	创建验证码
+*/
+Mcrypto.verifyCode = function(n){
+	var code = '';
+	for(var i = 0; i < n; i++){
+		code += Math.round(Math.random()*10).toString(); 
+	}
+
+	return code;
+};
+
+
 module.exports = Mcrypto;

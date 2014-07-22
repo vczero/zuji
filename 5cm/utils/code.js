@@ -6,7 +6,8 @@ var Code = {
 	"sign_err": "4", //签名有误
 	"psw_err": "5", //密码错误
 	"psw_re_err": "6", //重复密码错误
-	"user_exist": "7"
+	"user_exist": "7",
+	"verifycode_err": "8"
 };
 
 
