@@ -1,0 +1,31 @@
+@header_height:3em;
+@float_left:left;
+@float_right:right;
+
+body{
+	margin: 0;
+}
+
+.header{
+	height: @header_height;
+	width: 100%;
+	background-color: #F0F0F0;
+}
+
+#header_back{
+	height:@header_height;
+	width:30%;
+	float:@float_left;
+	border: 1px solid red;
+}
+
+#header_title{
+	height:@header_height;
+	float:@float_right;
+	width:69%; 
+	border: 1px solid red;
+}
+
+#header_title{
+	text-align: center;
+}
