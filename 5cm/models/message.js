@@ -53,7 +53,7 @@ Message.getMsgByLoc = function(loc, callback){
 				mongo.close();
 				return callback(error);
 			}
-			collection.find({msgLoc: loc}, function(error, items){
+			collection.find({ "msgLoc" : { $gt: loc-0.065, $lt: loc+0.065 }}, function(error, items){
 				mongo.close();
 				if(error){
 					return callback(error);

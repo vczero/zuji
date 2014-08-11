@@ -1,31 +1,69 @@
-@header_height:3em;
+@header_height:60px;
 @float_left:left;
 @float_right:right;
+@logo_pc_height:40px;
+
 
 body{
 	margin: 0;
+	background-color: #E6E6E6;
+}
+
+.cursor_po{
+	cursor: pointer;
 }
 
 .header{
 	height: @header_height;
 	width: 100%;
-	background-color: #F0F0F0;
+	background-color: #000000;
 }
 
 #header_back{
 	height:@header_height;
-	width:30%;
+	width:@logo_pc_height;
 	float:@float_left;
-	border: 1px solid red;
+	background-image: url('../../public/images/antenna2.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: @logo_pc_height @logo_pc_height;
 }
 
 #header_title{
 	height:@header_height;
-	float:@float_right;
-	width:69%; 
-	border: 1px solid red;
+	line-height: @header_height;
+	margin:auto @logo_pc_height;
+	font-size: 20px;
+	color: #FFF;
 }
 
 #header_title{
 	text-align: center;
+}
+
+.toolbar_sec{
+	background-color: #1C1817;
+	position: fixed;
+	bottom: 0;
+	height: @header_height;
+	width: 100%;
+}
+
+.toolbar{
+	height: @header_height;
+	width: 20%;
+	display: inline-block;
+	float: left;
+	text-align: center;
+}
+
+@toolbar_img_height:50px;
+.toolbar_img{
+	height: @toolbar_img_height;
+	width: @toolbar_img_height;
+	margin: (@header_height - @toolbar_img_height)/2 auto;
+}
+
+img{
+	border: 0; /*针对IE*/
 }
