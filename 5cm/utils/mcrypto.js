@@ -33,7 +33,6 @@ Mcrypto.verifyCode = function(n){
 	for(var i = 0; i < n; i++){
 		code += Math.round(Math.random()*10).toString(); 
 	}
-
 	return code;
 };
 

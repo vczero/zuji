@@ -1,23 +1,15 @@
 
-var mongo = require('../utils/mongo');
-var mcrypto = require('../utils/mcrypto');
-/*
-+--------------------------------------
-用户模型
-+--------------------------------------
-*/
+var mongo = require('../utils/mongo'),
+    mcrypto = require('../utils/mcrypto');
+
 var User = function(user){
 	this.name = user.name;
 	this.password = user.password;
 	this.email = user.email;
 }
 
-
 User.collName = 'user';
 
-/*
-  创建一个用户
-*/
 User.prototype.createUser = function(callback){
 	var user = {
 		name: this.name,
