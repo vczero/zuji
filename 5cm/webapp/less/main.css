@@ -68,3 +68,20 @@ img{
 	width: @toolbar_img_height;
 	margin: (@header_height - @toolbar_img_height)/2 auto;
 }
+
+/*登录部分*/
+.login {
+  position: absolute;
+  top:@header_height;
+  bottom:@toolbar_img_height;
+  right: 0;
+  left: 0;
+  /*opacity: 0.8;*/
+  background-color: #1E1E1E;
+}
+
+.userlogo{
+	width: 74px;
+	height: 74px;
+	border-radius: 6px;
+}

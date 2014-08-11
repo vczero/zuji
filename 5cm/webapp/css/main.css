@@ -52,3 +52,18 @@ img {
   width: 50px;
   margin: 5px auto;
 }
+/*登录部分*/
+.login {
+  position: absolute;
+  top: 60px;
+  bottom: 50px;
+  right: 0;
+  left: 0;
+  /*opacity: 0.8;*/
+  background-color: #1E1E1E;
+}
+.userlogo {
+  width: 74px;
+  height: 74px;
+  border-radius: 6px;
+}
