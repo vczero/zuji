@@ -9,6 +9,11 @@ body{
 	background-color: #E6E6E6;
 }
 
+img{
+	border: 0; /*针对IE*/
+}
+
+
 .cursor_po{
 	cursor: pointer;
 }
@@ -62,8 +67,4 @@ body{
 	height: @toolbar_img_height;
 	width: @toolbar_img_height;
 	margin: (@header_height - @toolbar_img_height)/2 auto;
-}
-
-img{
-	border: 0; /*针对IE*/
 }

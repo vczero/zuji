@@ -2,6 +2,10 @@ body {
   margin: 0;
   background-color: #E6E6E6;
 }
+img {
+  border: 0;
+  /*针对IE*/
+}
 .cursor_po {
   cursor: pointer;
 }
@@ -47,8 +51,4 @@ body {
   height: 50px;
   width: 50px;
   margin: 5px auto;
-}
-img {
-  border: 0;
-  /*针对IE*/
 }
