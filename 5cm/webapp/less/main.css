@@ -2,17 +2,24 @@
 @float_left:left;
 @float_right:right;
 @logo_pc_height:40px;
-
+@font_size:16px;
 
 body{
 	margin: 0;
 	background-color: #E6E6E6;
+	font-size: @font_size;
 }
 
 img{
 	border: 0; /*针对IE*/
 }
 
+.overflow_hidden{
+	overflow: hidden;
+}
+.clear_float{
+	clear:both;
+}
 
 .cursor_po{
 	cursor: pointer;
@@ -82,15 +89,14 @@ img{
 }
 
 .userlogo{
-	width: 74px;
-	height: 74px;
+	width: 60px;
+	height: 60px;
 	border-radius: 6px;
 }
 
 @login_margin_top: 10px;
 .login_form{
 	margin-top: @login_margin_top;
-	border: 1px solid red;
 	height: 140px;
 	width: 218px;
 	margin-left: auto;
@@ -127,11 +133,51 @@ img{
 
 
 /*--------------userinfo--------*/
-.userinfo{
-	border: 1px solid red;
+.userinfo_div{
 	position: absolute;
-	left: 0;
-	right: 0;
-	height: 200px;
+	left: 20px;
+	right: 20px;
+	height: 240px;
 	margin-top:@login_margin_top;
+}
+
+.diplay_ib{
+	display: inline-block;
+	float: left;
+}
+
+.diplay_ib div:first-child{
+	color: #525252;
+	font-weight: bold;
+}
+
+.userinfo_username{
+	margin-left: 8px;
+	margin-top: 8px;
+	height: @font_size;
+	width: 100px;
+}
+
+.userinfo_desc{
+	position: absolute;
+	top: 70px;
+	font-size: 14px;
+	line-height: 20px;
+	color: #4D4D4D;
+}
+
+#userinfo_desc_text{
+	height: 100px;
+}
+
+.logout{
+	background-color: #1463A6;
+	height: 30px;
+	width: 100px;
+	border-radius: 5px;
+	text-align: center;
+	line-height: 30px;
+	color: #FFF;
+	font-weight: bold;
+	margin: 10px auto;
 }
