@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="../css/main.css">
+		<script type="text/javascript" src="../js/sea2.3.js"></script>
+		<script type="text/javascript" src="../js/zepto.js"></script>
+	</head>
+	<body>
+		<script>
+		seajs.use('../tpl/header', function (header) {
+			$('body').append($(header('header',{title:'首页'})));
+			// $('#header_title').text('首页');
+		});
+
+		seajs.use('../tpl/footer', function (template) {
+			$('body').append($(template('footer')));
+		});
+		</script>
+	</body>
+</html>
+
+
+
+
+
