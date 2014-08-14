@@ -1,13 +1,14 @@
 var mongo = require('../utils/mongo'),
     location = require('../utils/location');
 
-var Message = function(user, message){
-	this.userid = user.email; //用户的唯一标识
+var Message = function(message){
+	this.userid = message.email; //用户的唯一标识
 	this.text = message.text; //必须
 	this.realLoc = message.realLoc;
 	this.msgLoc = message.msgLoc;
 	this.view = message.view; //阅读权限'public','private','userid'
 	this.pics = message.pic || [];
+	this.comments = message.comments || [];
 }
 
 Message.collName = 'message';
@@ -19,9 +20,9 @@ Message.prototype.createMsg = function(callback){
 		'realLoc': this.realLoc,
 		'msgLoc': this.msgLoc,
 		'view': this.view,
-		'pics': this.pics
+		'pics': this.pics,
+		'comments': this.comments
 	};
-
 	mongo.open(function(error, db){
 		if(error){
 			return callback(error);
@@ -42,7 +43,6 @@ Message.prototype.createMsg = function(callback){
 	});
 }
 
-//根据位置获取瓶子
 Message.getMsgByLoc = function(loc, callback){
 	mongo.open(function(error, db){
 		if(error){
@@ -64,7 +64,7 @@ Message.getMsgByLoc = function(loc, callback){
 	});
 }
 
-//根据用户获取瓶子
+
 Message.getMsgByUser = function(userid, callback){
 	mongo.open(function(error, db){
 		if(error){

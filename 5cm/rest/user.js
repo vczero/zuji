@@ -3,17 +3,17 @@ var Mcrypto = require('../utils/mcrypto');
 var Code = require('../utils/code');
 
 
-var UserRest = {};
+var userRest = {};
 /*
 	获取用户信息，判断用户是否可以登录
 */
-UserRest.get = function(req, res){
-	var username = req.body.username;
-	var password = Mcrypto.md5Password(req.body.password);
-	var userinfo = {
-		code: 0,
-		user: {}
-	};
+userRest.get = function(req, res){
+	var username = req.body.username,
+	    password = Mcrypto.md5Password(req.body.password),
+	    userinfo = {
+			code: 0,
+			user: {}
+		};
 
 	User.getUser(username, function(err, user){
 		//不存在的用户名
@@ -35,15 +35,16 @@ UserRest.get = function(req, res){
 }
 
 
-UserRest.create = function(req, res){
-	var username = req.body.username;
-	var password = req.body.password;
-	var email = req.body.email;
-	var password_re = req.body.password_re;
-	var registerInfo = {
-		code: 0,
-		name:''
-	};
+userRest.create = function(req, res){
+	var body = req.body,
+	    username = req.body.username,
+	    password = req.body.password,
+	    email = req.body.email,
+	    password_re = req.body.password_re,
+	    registerInfo = {
+			code: 0,
+			name:''
+		};
 	if(password !== password_re){
 		registerInfo.code = Code.psw_re_err;
 		return res.send(registerInfo);
@@ -77,4 +78,4 @@ UserRest.create = function(req, res){
 	});
 }
 
-module.exports = UserRest;
+module.exports = userRest;

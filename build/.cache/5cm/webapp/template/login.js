@@ -1,2 +1,0 @@
-/*TMODJS:{"version":1,"md5":"dbdb2eee8f4a3f7e1965d6b8264b86a5"}*/
-template('5cm/webapp/template/login',' <aside class="login">  <div class="login_form"> <div class="login_text_div"> 用户名<input type="text" name="username"/> </div> <div class="login_text_div"> 密码<input type="password" name="password" style="margin-left:17px;" /> </div> <div class="login_text_div"> <input style="margin-left:75px;" class="cursor_po" type="button" value="登录" /> <input type="button" class="cursor_po" value="取消" /> </div> </div> </aside> ');

@@ -15,10 +15,6 @@ var verifyCode = (function(){
     return getInstance();
 })();
 
-
-
-
-console.log(verifyCode.code);
 var verifyCodeRest = function(req, res){
 	var json = {
 		code: Code.success,

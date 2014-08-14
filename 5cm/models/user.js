@@ -1,4 +1,3 @@
-
 var mongo = require('../utils/mongo'),
     mcrypto = require('../utils/mcrypto');
 
