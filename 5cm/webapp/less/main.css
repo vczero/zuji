@@ -1,7 +1,7 @@
-@header_height:50px;
+@header_height:45px;
 @float_left:left;
 @float_right:right;
-@logo_pc_height:40px;
+@logo_pc_height:35px;
 @font_size:16px;
 
 body{
@@ -70,7 +70,7 @@ img{
 }
 
 /*--------footer--------*/
-@toolbar_img_height:50px;
+@toolbar_img_height:35px;
 .toolbar_img{
 	height: @toolbar_img_height;
 	width: @toolbar_img_height;

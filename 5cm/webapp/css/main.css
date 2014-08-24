@@ -17,23 +17,23 @@ img {
   cursor: pointer;
 }
 .header {
-  height: 50px;
+  height: 45px;
   width: 100%;
   background-color: #000000;
 }
 #header_back {
-  height: 50px;
-  width: 40px;
+  height: 45px;
+  width: 35px;
   float: left;
   background-image: url('../../public/images/antenna2.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 40px 40px;
+  background-size: 35px 35px;
 }
 #header_title {
-  height: 50px;
-  line-height: 50px;
-  margin: auto 40px;
+  height: 45px;
+  line-height: 45px;
+  margin: auto 35px;
   font-size: 20px;
   color: #FFF;
 }
@@ -44,11 +44,11 @@ img {
   background-color: #1C1817;
   position: fixed;
   bottom: 0;
-  height: 50px;
+  height: 45px;
   width: 100%;
 }
 .toolbar {
-  height: 50px;
+  height: 45px;
   width: 20%;
   display: inline-block;
   float: left;
@@ -56,15 +56,15 @@ img {
 }
 /*--------footer--------*/
 .toolbar_img {
-  height: 50px;
-  width: 50px;
-  margin: 0px auto;
+  height: 35px;
+  width: 35px;
+  margin: 5px auto;
 }
 /*---------login---------*/
 .login {
   position: absolute;
-  top: 50px;
-  bottom: 50px;
+  top: 45px;
+  bottom: 35px;
   right: 0;
   left: 0;
   /*opacity: 0.8;*/

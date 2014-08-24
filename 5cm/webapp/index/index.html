@@ -10,9 +10,11 @@
 	</head>
 	<body>
 		<script>
-		seajs.use('../tpl/header', function (header) {
-			$('body').append($(header('header',{title:'首页'})));
-			// $('#header_title').text('首页');
+		var data = {title:'首页'};
+		seajs.use('../tpl/header', function (template) {
+			console.log(data);
+			console.log(template('header', data));
+			$('body').append($(template('header', data)));
 		});
 
 		seajs.use('../tpl/footer', function (template) {
