@@ -4,25 +4,121 @@
 		<meta charset="UTF-8">
 		<title>首页</title>
 		<link rel="stylesheet" type="text/css" href="../css/main.css">
-		<script type="text/javascript" src="../js/sea2.3.js"></script>
-		<script type="text/javascript" src="../js/zepto.js"></script>
+	    <script src="../js/jquery1.7.2.js"></script>
+	    <script src="../js/underscore.js"></script>
+	    <script src="../js/backbone.js"></script>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, minimal-ui" />
 	</head>
 	<body>
-		<script>
-		var data = {title:'首页'};
-		seajs.use('../tpl/header', function (template) {
-			console.log(data);
-			console.log(template('header', data));
-			$('body').append($(template('header', data)));
-		});
-
-		seajs.use('../tpl/footer', function (template) {
-			$('body').append($(template('footer')));
-		});
-		</script>
+		<!--包含部分-->
+		<header>
+			<div class="header">
+				<div id="header_back" class="cursor_po"></div>
+				<div id="header_title" class="cursor_po">首页</div>
+			</div>
+		</header>
+		<!--包含部分-->
+		<section id="content">
+		
+		</section>
+		<!--包含部分-->
+		<footer class="toolbar_sec">
+			<div class="toolbar">
+				<a href="#">
+					<img class="toolbar_img" src="../../public/images/drupal.png">
+				</a>
+			</div>
+			<div class="toolbar">
+				<a href="#">
+					<img class="toolbar_img" src="../../public/images/locaton.png">
+				</a>
+			</div>
+			<div class="toolbar">
+				<a href="#">
+					<img class="toolbar_img" src="../../public/images/alarm.png">
+				</a>
+			</div>
+			<div class="toolbar">
+				<a href="#">
+					<img class="toolbar_img" src="../../public/images/ning.png">
+				</a>
+			</div>
+			<div class="toolbar">
+				<a href="#">
+					<img class="toolbar_img" src="../../public/images/ligthbulb_off.png">
+				</a>
+			</div>
+		</footer>
+		<!--包含部分-->
 	</body>
+	<script type="text/javascript">
+		$(function(){
+			//模型
+			var Message = Backbone.Model.extend({
+				initialize: function(){
+
+				},
+				defaults: {
+					userid: '会说话的人',
+					message: '在马来西亚种下了一个故事，希望有心人去读取',
+					time: '2014-08-24'
+				}
+			});
+
+			//集合
+			var Messages = Backbone.Collection.extend({
+				model: Message
+			});
+
+			var msgs = new Messages;
+			msgs.add({
+					userid: '路人甲',
+					message: '在马人去读取',
+					time: '2014-08-24'
+				});
+			msgs.add({
+					userid: '路人A',
+					message: '在马人去读取',
+					time: '2014-08-24'
+				});
+			msgs.add({
+					userid: '路人B',
+					message: '在马人去读取',
+					time: '2014-08-24'
+				});
+
+			//视图
+			var MessageView = Backbone.View.extend({
+				el: '#content',
+				model: Message,
+				event: {
+				  	'click #userid': 'lookuser',
+				  	'click #message': 'lookmessage',
+				  	'click #time': 'looktime'
+				},
+				lookuser: function(){
+					alert('查看用户信息');
+				},
+				lookmessage: function(){
+					alert('查看消息');
+				},
+				looktime: function(){
+					alert('查看时间');
+				},
+				render: function() {
+					console.log(this.model);
+					$(this.el).html("<div>" + this.model.get("userid") + "</div>");
+				}
+			});
+
+			var msgView = new MessageView;
+			msgView.render();
+		});
+	</script>
 </html>
+
+
+
 
 
 

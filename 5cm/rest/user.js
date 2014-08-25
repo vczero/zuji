@@ -3,11 +3,10 @@ var Mcrypto = require('../utils/mcrypto');
 var Code = require('../utils/code');
 
 
-var userRest = {};
-/*
-	获取用户信息，判断用户是否可以登录
-*/
-userRest.get = function(req, res){
+var UserRest = {};
+
+//用户登录
+UserRest.login = function(req, res){
 	var username = req.body.username,
 	    password = Mcrypto.md5Password(req.body.password),
 	    userinfo = {
@@ -34,8 +33,8 @@ userRest.get = function(req, res){
 	});
 }
 
-
-userRest.create = function(req, res){
+//用户注册
+UserRest.register = function(req, res){
 	var body = req.body,
 	    username = req.body.username,
 	    password = req.body.password,
@@ -78,4 +77,4 @@ userRest.create = function(req, res){
 	});
 }
 
-module.exports = userRest;
+module.exports = UserRest;

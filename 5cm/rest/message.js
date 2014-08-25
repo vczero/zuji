@@ -1,8 +1,9 @@
 var Message = require('../models/message'),
     Code = require('../utils/code');
 
-var messageRest = {};
-messageRest.create = function(req, res){
+var MessageRest = {};
+//创建一个短消息故事
+MessageRest.create = function(req, res){
 	var body = req.body,
 	    msg = {
 			'userid': body.userid,
@@ -22,6 +23,19 @@ messageRest.create = function(req, res){
 		}
 		res.send(msg);
 	});
-}
+};
 
-module.exports = messageRest;
+//获取某个人的短消息故事
+MessageRest.getMsgByUser = function(req, res){
+	var userid = req.params.userid;
+	Message.getMsgByUser(userid, function(err, items){
+		if(err){
+			return res.send({});
+		}
+		res.send(items);
+	});
+
+};
+
+
+module.exports = MessageRest;
