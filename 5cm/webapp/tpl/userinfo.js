@@ -1,4 +1,0 @@
-/*TMODJS:{"version":1,"md5":"d293b273acf350178e2c08888a7cf945"}*/
-define(function(require) {
-    return require("./template")("userinfo", '<aside class="login">  <div class="userinfo_div"> <div> <div class="diplay_ib"> <img class="userlogo" src="../../public/images/awatar.png" /> </div> <div class="diplay_ib"> <div class="userinfo_username overflow_hidden">我是小小炮炮兵</div> <div class="userinfo_username overflow_hidden">昵称</div> </div> </div> <div class="clear_float userinfo_desc"> <div>你的5cm故事描述:<div> <div class="overflow_hidden" id="userinfo_desc_text"> 推荐的去除浮动代码为：在css文件中定义如下的women收到货撒谎哇个 </div> </div> <div class="logout cursor_po"> 注销账号 </div> </div> </aside> ');
-});

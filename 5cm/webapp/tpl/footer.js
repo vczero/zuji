@@ -1,4 +1,0 @@
-/*TMODJS:{"version":2,"md5":"5224df6919d5ae474a4801096f4e6506"}*/
-define(function(require) {
-    return require("./template")("footer", ' <footer class="toolbar_sec"> <div class="toolbar"> <a href=""> <img class="toolbar_img" src="../../public/images/drupal.png"> </a> </div> <div class="toolbar"> <a href=""> <img class="toolbar_img" src="../../public/images/locaton.png"> </a> </div> <div class="toolbar"> <a href=""> <img class="toolbar_img" src="../../public/images/alarm.png"> </a> </div> <div class="toolbar"> <a href=""> <img class="toolbar_img" src="../../public/images/ning.png"> </a> </div> <div class="toolbar"> <a href=""> <img class="toolbar_img" src="../../public/images/ligthbulb_off.png"> </a> </div> </footer> ');
-});
