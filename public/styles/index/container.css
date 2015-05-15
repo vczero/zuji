@@ -1,0 +1,12 @@
+
+
+.container{
+	width:1000px;
+	margin-top:20px;
+	min-height:800px;
+	border:1px solid red;
+}
+
+.container>div{
+	width:100%;
+}
