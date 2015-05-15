@@ -1,3 +1,31 @@
-<h1><%= message %></h1>
+<!--<h1><%= message %></h1>
 <h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<pre><%= error.stack %></pre>-->
+
+<style>
+	body{
+		margin:0;
+		padding:0;
+		background-color:#ddd;
+		font-size:13px;
+		color:#0066CC;
+	}
+	
+</style>
+<div style="margin-top:200px;margin-left:auto;margin-right:auto;width:220px;">
+	<div><img  src="/imgs/404.png"/></div>
+	<div style="margin-top: 10px;">
+		从前住在这座城里的姑娘搬家了.....
+	</div>
+	<div style="margin-top:20px;">
+		你可以点击：<a href="/">跳转到首页</a>
+	</div>
+	<div style="margin-top:20px;">
+		或者6秒后自动跳转到首页
+	</div>
+</div>
+<script type="text/javascript">
+	setTimeout(function(){
+		location.href = '/';
+	}, 6000);
+</script>

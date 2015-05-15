@@ -1,10 +1,4 @@
-/**
- * 用户模型的数据库层面CRUD,不涉及业务层面,不做字符校验,不做加密
- * 所有的校验、加密放到逻辑中；delete密码，delete邮箱
- * @author: 王利华
- * @time: 2015-5-7
- * @email: lh_wang@ctrip.com
- * */
+
 
 var toObjectID = require('mongoskin').helper.toObjectID;
 var uuid = require('node-uuid');

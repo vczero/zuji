@@ -1,0 +1,23 @@
+.left{
+	position:absolute;
+	top:0px;
+	left:51px;
+	bottom:0;
+	width:330px;
+	background-color:#FFF;
+	border-right:1px solid #ccc;
+}
+
+.left_go{
+	position:absolute;
+	top:45%;
+	left:382px;
+	background-color:#006666;
+	width:20px;
+	height:60px;
+	color:#fff;
+	text-align:center;
+	line-height:60px;
+	cursor:pointer;
+	z-index:1000;
+}

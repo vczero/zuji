@@ -1,9 +1,4 @@
-/**
- * 用户登录模块
- * @author: 王利华
- * @time: 2015-5-11
- * @email:lh_wang@ctrip.com
- * */
+
 
 module.exports = {
 	/* 初始化登录路由,init直接加载进内存

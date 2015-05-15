@@ -1,10 +1,4 @@
 
-/**
- * 加载项目所有的路由到内存中
- * @author: 王利华
- * @time: 2015-5-7
- * @email: lh_wang@ctrip.com
- * */
 var fs = require("fs");
 
 module.exports = function(app){

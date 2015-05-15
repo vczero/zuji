@@ -1,9 +1,4 @@
-/**
- * 基本关于数据相关的操作模块;根据不同的子系统分库分表
- * @author: 王利华
- * @time: 2015-5-8
- * @email:lh_wang@ctrip.com
- * */
+
 var mongoskin = require('mongoskin');
 var config = require('../../config/connections');
 

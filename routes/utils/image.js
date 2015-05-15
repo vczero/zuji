@@ -1,11 +1,4 @@
 
-/**
- * 验证码模块
- * 
- * @author: 王利华
- * @time: 2015-5-11
- * @email:lh_wang@ctrip.com
- * */
 
 var http = require('http');
 var ccap = require('ccap');

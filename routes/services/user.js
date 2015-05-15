@@ -1,10 +1,4 @@
 
-/**
- * 用户服务接口,提供restful json api
- * @author: 王利华
- * @time: 2015-5-7
- * @email:lh_wang@ctrip.com
- * */
 
 var userEngine = require('../engine/userEngine');
 var request = require('request');

@@ -1,10 +1,3 @@
-/**
- * 数据库相关配置
- * 确保该文件在部署最后进行.gitignore的过滤；
- * @author: 王利华
- * @time: 2015-5-8
- * @email:lh_wang@ctrip.com
- */
 
 module.exports = {
 	

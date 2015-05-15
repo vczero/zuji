@@ -1,14 +1,4 @@
 
-/**
- * db setting
- * ensure db [chmod] permissions
- * use the method in shell to create a user for a db;
- * do not create a super user for all db;
- * just for current db and limit permissions
- * @author: 王利华
- * @time: 2015-5-7
- * @email:lh_wang@ctrip.com
- */
 
 
 ### start server
