@@ -5,6 +5,6 @@ require.config({
     }
 });
  
-require(['js/index/map'], function(map) {
+require(['js/index/map', 'js/index/leftgo'], function(map, leftgo) {
    	
 });
