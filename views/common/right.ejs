@@ -1,0 +1,47 @@
+
+<!--
+	作者：wlhmyit@126.com
+	时间：2015-05-25
+	描述：这个是前端模板，供前端调用
+-->
+<div class="right">
+	<script id="right_tpl" type="text/template">
+	 	<div class="right_user">
+	 		<div class="right_avatar fl">
+	 			<img src="{%=avatar%}"/>
+	 		</div>
+	 		<div class="right_userinfo fl">
+	 			<div>{%=username%}</div>
+	 			<div>
+	 				<span>{%=time%}</span>
+	 				<span>
+	 					<a href="{%=weibo%}">微博</a>
+	 				</span>
+	 				<span>浏览({%=liulan%})</span>
+	 			</div>
+	 		</div>
+	 	</div>
+	 	<div class="right_text">
+	 		{%=content%}
+	 	</div>
+	 	<div class="right_post_div">
+	 		<div><textarea maxlength="200"></textarea></div>
+	 		<div class="right_post"><div class="fr">评论</div></div>
+	 	</div>
+	 	<div class="right_comments">
+	 		{%for(var i in comments){%}
+	 		<div class="fl right_comments_user">
+	 			<img src="{%=comments[i].avatar%}"/>
+	 		</div>
+	 		<div class="fl right_comments_content">
+	 			<div>{%=comments[i].content%}</div>
+	 			<div>{%=comments[i].time%}</div>
+	 		</div>
+	 		{%}%}
+	 	</div>
+	 	<div class="right_hide">
+	 		<div class="mrl">隐藏侧栏</div>
+	 	</div>
+	 </script>
+	 <div id="right_pannel_div" class="right_pannel"></div>
+</div>

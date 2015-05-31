@@ -1,18 +1,41 @@
 
+var userEngine = require('../engine/userEngine');
 
 module.exports = {
 	init: function(app){
+		//全国信息
 		app.get('/', this.index);
-		app.get('/example', this.example);
+		app.get('/setting', this.setting);
+		app.get('/login', this.login);
+		app.get('/ucenter', this.ucenter);
 	},
 	
 	
 	index: function(req, res){
-		return res.render('index/main', {title: ''})
+		return res.render('index/main', {
+			title: '',
+			user: req.session.user || ''
+		});
 	},
 	
-	example: function(req, res){
-		res.render('example/main', {title: '举例'})
-	}
+	setting: function(req, res){
+		return res.render('setting/main', {
+			title: '',
+			user: req.session.user || ''
+		});
+	},
 	
+	login: function(req, res){
+		return res.render('login/main', {
+			title: '',
+			user: req.session.user || ''
+		});
+	},
+	
+	ucenter: function(req, res){
+		return res.render('ucenter/main', {
+			title: '',
+			user: req.session.user || ''
+		});
+	}
 };

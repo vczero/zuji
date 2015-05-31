@@ -1,0 +1,71 @@
+<!--user setting-->
+<div class="middle setting">
+	<div class="baseinfo">
+		<div class="setting_title">
+			<div class="fl"><img src="/imgs/setting3.png"/></div>
+			<div class="fl">基本信息</div>
+		</div>
+		<div class="setting_module">
+			<div class="baseinfo_input">
+				<span>用户名</span>
+				<input id="username" type="text" value="<%=user.username%>"/>
+				<span class="baseinfo_sw">邮箱</span>
+				<input type="text" value="<%=user.email%>" readonly="readonly"/><br />
+				<span>微博地址</span>
+				<input id="weibo" type="text" value="<%=user.weibo%>"/>
+				<span class="baseinfo_sw">微信号</span>
+				<input id="weixin" type="text"value="<%=user.weixin%>"/><br />
+			</div>
+			
+			<div class="baseinfo_sign">
+				<div>签名1</div>
+				<div>
+					<textarea id="sign1" maxlength="200"><%=user.sign[0] || ''%></textarea>
+				</div>
+				<div>签名2</div>
+				<div>
+					<textarea id="sign2" maxlength="200"><%=user.sign[1] || ''%></textarea>
+				</div>
+			</div>
+			<div class="baseinfo_h">
+				<div id="save_base" class="baseinfo_btn baseinfo_btn_blue">保存</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="baseinfo">
+		<div class="setting_title">
+			<div class="fl"><img src="/imgs/setting3.png"/></div>
+			<div class="fl">上传微信二维码</div>
+		</div>
+		<div class="upload_weixin">
+			<div>上传微信二维码(请到微信“我”找到微信号或者进入找到“我的二维码”截图)</div>
+			<div>tip: 图片一旦上传就会自动发给服务器；如果不需要显示微信二维码，点击删除即可。</div>
+			<div>
+				<!--上传文件-->
+				<div>
+				    <div id="fileList" class="uploader-list"></div>
+				    <div id="filePicker">选择图片</div>
+				</div>
+			</div>
+		</div>
+		<div class="baseinfo_b">
+			<div id="delete_weixin" class="baseinfo_btn" style="width:100px;">删除微信二维码</div>
+		</div>
+	</div>
+	
+	
+	<div class="baseinfo">
+		<div class="setting_title">
+			<div class="fl"><img src="/imgs/setting3.png"/></div>
+			<div class="fl">上传头像</div>
+		</div>
+		<div class="setting_module setting_pre">
+			<!--上传头像文件-->
+			<div>
+			    <div id="fileList_avatar" class="uploader-list"></div>
+			    <div id="filePicker_avatar">选择图片</div>
+			</div>
+		</div>
+	</div>
+</div>

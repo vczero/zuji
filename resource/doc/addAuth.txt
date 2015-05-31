@@ -27,7 +27,7 @@ $db.createUser(
 )
 
 ### for local db
-db.createUser({user: 'guid', 'pwd': 'guid', roles: [{role: 'readWrite', db: 'guid'}]});
+db.createUser({user: 'footprint', 'pwd': 'footprint', roles: [{role: 'readWrite', db: 'footprint'}]});
 
 
 ### db.auth

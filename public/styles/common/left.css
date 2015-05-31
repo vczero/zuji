@@ -1,0 +1,49 @@
+.left{
+	position:absolute;
+	top:0px;
+	left:55px;
+	bottom:0;
+	width:300px;
+	background-color:#fff;
+	z-index:2000;
+	overflow-y:auto;
+}
+
+.left_go{
+	position:absolute;
+	top:45%;
+	left:355px;
+	background-color:#1CAAEA;
+	width:20px;
+	height:60px;
+	color:#fff;
+	text-align:center;
+	line-height:60px;
+	cursor:pointer;
+	z-index:1000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

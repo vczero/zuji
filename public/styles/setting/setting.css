@@ -1,0 +1,138 @@
+
+.setting{
+	background-color:#fff;
+}
+
+.baseinfo{
+	margin-top:40px;
+	margin-left:60px;
+	overflow-y:auto;
+	width:900px;
+}
+
+.setting_title{
+	font-size:14px;
+	font-weight:bold;
+	line-height:20px;
+	height:20px;
+	margin-bottom:10px;
+}
+
+.setting_title img{
+	width:20px;	
+	height:20px;
+	margin-right:5px;
+}
+
+.setting_module{
+	width:890px;
+	min-height:200px;
+	padding-bottom:10px;
+	border-bottom-width:700px;
+	border-bottom:1px dashed #ccc;
+	border-left:3px solid #22BDFF;
+}
+
+.baseinfo_input input{
+	outline:none;
+	height:28px;
+	width:200px;
+	margin-top:10px;
+	border-radius:3px;
+	border:1px solid #ccc;
+	padding-left:5px;
+}
+
+.baseinfo_input span{
+	margin-left:10px;
+	display:inline-block;
+	width:57px;
+	height:28px;
+	line-height:28px;
+}
+
+span.baseinfo_sw{
+	width:45px;
+}
+
+.baseinfo_sign{
+	margin-top:20px;
+	margin-left:10px;
+}
+
+.baseinfo_sign textarea{
+	outline: none;
+	border:1px solid #ccc;
+	width:600px;
+	height:50px;
+	resize:none;
+	border-radius:3px;
+}
+
+.upload_weixin{
+	margin-top:10px;
+	margin-left:10px;
+}
+
+.setting_pre{
+	min-height:69px;
+}
+
+.setting_pre>div{
+	margin-left:10px;
+}
+
+.setting_pre input{
+	margin-top:5px;
+	margin-right: 30px;
+}
+
+.baseinfo_btn{
+	height:30px;
+	width:60px;
+	color:#fff;
+	margin-left:500px;
+	text-align: center;
+	line-height:30px;
+	background-color:#E72D00;
+	cursor:pointer;
+	border-radius:3px;
+}
+
+.baseinfo_h{
+	width:700px;
+	margin-top:10px;
+	margin-left:10px;
+	height:35px;
+}
+
+.baseinfo_b{
+	width:700px;
+	margin-top:10px;
+	margin-left:10px;
+	height:35px;
+}
+
+.baseinfo_btn_blue{
+	background-color:#3C9BFD;
+}
+
+.baseinfo_btn:hover{
+	background-color:#00AD2D;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

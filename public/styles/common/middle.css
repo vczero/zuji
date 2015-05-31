@@ -1,0 +1,40 @@
+.middle{
+	position:absolute;
+	left:356px;
+	right:0;
+	top:0;
+	bottom:0;
+	overflow-y:auto;
+}
+
+.map_style{
+	position:absolute;
+	right:20px;
+	bottom:30px;
+	cursor:pointer;
+}
+
+.map_style div{
+	height:25px;
+	width:50px;
+	text-align:center;
+	line-height: 25px;
+	color:#fff;
+}
+
+.map_style div:nth-child(1){
+	background-color:#F3C500;
+}
+
+
+.map_style div:nth-child(2){
+	background-color:#262626;
+}
+
+.map_style div:nth-child(3){
+	background-color:#49493E;
+}
+
+.map_style div:nth-child(4){
+	background-color:#2CB0A2;
+}

@@ -1,0 +1,203 @@
+.avatar{
+	width:70px;
+	height:70px;
+	margin-top:70px;
+}
+
+.avatar img{
+	width:70px;
+	height:70px;
+	border-radius:35px;
+}
+
+.bigname{
+	width:60px;
+	overflow-x:hidden;
+	font-size:20px;
+	font-weight:bold;
+	margin-top:10px;
+}
+
+.bigname span{
+	display:block;
+	width:60px;
+	overflow-x:hidden;
+	text-align:center;
+}
+
+.star{
+	width:140px;
+	height:30px;
+	margin-top:10px;
+	text-align:center;
+	color:#fff;
+	line-height:30px;
+	box-sizing:border-box;
+	cursor:pointer;
+}
+
+.star a{
+	text-decoration:none;
+}
+
+.star>div{
+	height:30px;
+}
+.star>div:nth-child(1){
+	background-color:#FF0046;
+	text-align:center;
+	width:78px;
+	z-index:2;
+}
+.star>div:nth-child(2){
+	background-color:#49BD38;
+	text-align:center;
+	width:60px;
+}
+.star>div:nth-child(1):hover{
+	background-color:#22BDFF;
+}
+
+.star>div:nth-child(2):hover{
+	background-color:#22BDFF;
+}
+
+.sign{
+	width:280px;
+	margin-left:10px;
+	font-size:14px;
+}
+
+
+.sign>p{
+	display: block;
+    -webkit-margin-before: 1em;
+	-webkit-margin-after: 1em;
+	-webkit-margin-start: 0px;
+	-webkit-margin-end: 0px;
+}
+
+.story_num{
+	width:145px;
+	box-sizing:border-box;
+	height:50px;
+	text-align:center;
+	margin-top:30px;
+}
+.story_num div{
+	overflow:hidden;
+}
+
+.story_num>div{
+	width:145px;
+}
+
+.story_num_n>div{
+	width:70px;
+	font-size:18px;
+	font-style:italic;
+	border-right:1px solid #DDDDDD;
+}
+
+.story_num_t>div{
+	font-size:12px;
+	color:#555555;
+	line-height:20px;
+	width:70px;
+	border-right:1px solid #DDDDDD;
+}
+
+.mystep{
+	width:280px;
+	margin-left:10px;
+	overflow-y:auto;
+}
+
+.mystep div{
+	margin-top:10px;
+	margin-right:5px;
+	padding-left:10px;
+	padding-right:10px;
+	height:30px;
+	border:1px solid #ccc;
+	text-align: center;
+	line-height:30px;
+	font-size:12px;
+	cursor:pointer;
+}
+
+.mystep div:hover{
+	background-color:#1CB7FF;
+	color:#fff;
+	border:1px solid #1CB7FF;
+}
+
+
+.steptitle{
+	margin-left:10px;
+	font-size: 14px;
+    font-weight: bold;
+    margin-top:40px;
+}
+
+
+.weixin_img{
+	position:relative;
+	height: 250px;
+	width: 200px;
+	border:1px solid #ccc;
+	margin-top:3px;
+	border-radius:4px;
+	margin-left:-65px;
+	background-color:#fff;
+	display: none;
+	color:#000;
+	font-size:16px;
+	font-weight:bold;
+}
+
+.weixin_img img{
+	margin-top:10px;
+	margin-left:5px;
+	height:180px;
+	width: 180px;
+}
+
+.logout{
+	margin-top: 50px;
+	width:300px;
+	height:60px;
+}
+
+.logout>div{
+	position:absolute;
+	bottom:20px;
+	left:30px;
+	width:220px;
+	height:30px;
+	border-radius:4px;
+	border:1px solid #ccc;
+	text-align:center;
+	line-height:30px;
+	cursor:pointer;
+}
+
+.logout>div:hover{
+	border:1px solid #4BB2E7;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

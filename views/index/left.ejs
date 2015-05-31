@@ -1,32 +1,5 @@
-<div id="left_pannel" class="left bs">
-	<div class="avatar mrl">
-		<img src="/imgs/avatar.png"/>
-	</div>
-	<div class="bigname mrl">
-		<span>vczero</span>
-	</div>
-	
-	<div class="star mrl">
-		<div class="fl">+关注微博</div>
-		<div class="fl">微信</div>
-	</div>
-	
-	<div class="sign">
-		<p>人生难得3万日,青春区区5千天。谁说前端是很low的，有种放学别走，信不信我打你，我有n多大哥。</p>
-		<p>php是世界上最好的语言(我算是怕你们了...)，php自动纳入前端，自豪～</p>
-	</div>
-	
-	<div class="story_num mrl">
-		<div class="story_num_n">
-			<div class="fl">1119</div>
-			<div class="fl">211</div>
-		</div>
-		<div class="story_num_t">
-			<div class="fl">发表</div>
-			<div class="fl">回复</div>
-		</div>
-	</div>
-</div>
-<div id="left_pannel_go" class="left_go">
-	<div class="home_left_del"></div>
-</div>
+<% if(!user){%>
+	<%- include('login')%>
+<%} else{%>
+	<%- include('userinfo')%>
+<%}%>

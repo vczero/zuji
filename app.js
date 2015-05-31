@@ -31,6 +31,16 @@ app.use(session({
 
 
 var server = http.createServer(app);
+
+//real time 
+var io = require('socket.io')(server);
+io.on('connection', function(socket){
+	socket.on('event', function(data){
+		console.log('-----a user---------');
+	});
+	socket.on('disconnect', function(){});
+});
+
 server.listen(app.get('port'));
 
 server.on('listening', function(){
@@ -84,6 +94,8 @@ async.waterfall([
 		});
     }
 ]);
+
+
 
 
 

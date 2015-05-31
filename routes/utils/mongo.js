@@ -8,7 +8,7 @@ module.exports = {
 	/*************************************************/
 	/*     创建guiderDB数据库链接实例，后续测试放入链接池  */
 	/************************************************/
-	guiderDB: function(){
+	getDB: function(){
 		var host = config.host;
 		var port = config.port;
 		var guiderDB = config.connections[0];
@@ -21,23 +21,6 @@ module.exports = {
 	        native_parser: true
 	    };
 		
-		return mongoskin.db(str, option);
-	},
-	
-	/***********************************************/
-	/*     创建wikiDB数据库链接实例，后续测试放入链接池  */
-	/***********************************************/
-	wikiDB: function(){
-		var host = config.host;
-		var port = config.port;
-		var wikiDB = config.connections[1];
-		var dbname = wikiDB.dbname;
-		var usename = wikiDB.username;
-		var dbpsw = wikiDB.dbpsw;
-		var str = this._concatStr(usename, dbpsw, host, port, dbname);
-		var option = {
-	        native_parser: true
-	    };
 		return mongoskin.db(str, option);
 	},
 	

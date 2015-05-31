@@ -1,0 +1,19 @@
+.toolbox{
+	position:absolute;
+	right:0px;
+	top:120px;
+	height:300px;
+	width:40px;
+	border-right:0;
+	border-radius:4px;
+}
+
+.toolbox img{
+	width:35px;
+	cursor:pointer;
+	margin-bottom:15px;
+}
+
+.toolbox img:hover{
+	width:40px;
+}

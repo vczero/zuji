@@ -11,16 +11,9 @@ module.exports = {
 	connections: [
 		//Base DB
 		{
-			dbname: 'guid',
-			username: 'guid',
-			dbpsw: 'guid',
-			permissions: 'readWrite'
-		},
-		//Other DB
-		{
-			dbname: 'wiki',
-			username: 'wiki',
-			dbpsw: 'wiki',
+			dbname: 'footprint',
+			username: 'footprint',
+			dbpsw: 'footprint',
 			permissions: 'readWrite'
 		}
 	]
