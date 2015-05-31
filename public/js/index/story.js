@@ -99,9 +99,18 @@ define(['jquery', 'underscore', 'js/common/mask'], function($, _, mask){
     		var _el = $(e.target || e.srcElement);
     		if(_el.hasClass('ucnter_get_detail')){
     			mask.show();
-    			$('.story').css('display', 'block');
+			$('.story').fadeIn('slow');
     		}
     		
+    		if(_el[0].id === '___wlh_mask'){
+    			mask.hide();
+    			$('.story').fadeOut('slow');
+    		}
     });
     
+    $('.story_hide').on('click', function(e){
+    		mask.hide();
+    		$('.story').fadeOut('slow');
+    });
+   
 });

@@ -1,5 +1,4 @@
 
-
 .story{
 	position: absolute;
 	top:40px;
@@ -98,9 +97,11 @@
 
 .story_comments{
 	width:580px;
-	min-height:50px;
+	min-height:70px;
 	font-size:13px;
 	margin-top:20px;
+	margin-bottom:10px;
+	color:#79797A;
 }
 
 .story_comments_user{
@@ -138,6 +139,8 @@
 	border-radius:3px;
 	text-align:center;
 	line-height:30px;
+	cursor:pointer;
+	margin-bottom:20px;
 }
 
 
