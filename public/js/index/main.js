@@ -18,15 +18,7 @@ require([
 		'js/index/verifycode',
 		'js/common/searchinput',
 		'js/index/show',
-		'js/index/right'
+		'js/index/detail'
 ], function($) {
 	
-	var ucnter_get_detail = $('.ucnter_get_detail');
-	console.log(ucnter_get_detail);
-	$('.right').css('display', 'block');
-	ucnter_get_detail.on('click', function(){
-		$('.right').css('display', 'block');
-		$('.middle').css('right', '370px');
-	});
-   	
 });

@@ -19,8 +19,6 @@ define(['jquery'], function($){
 		};
 		$.post('/register', obj, function(data){
 			if(data.status === 1){
-				console.log(data);
-				//location.href = '/';
 				cookie.set('userid', data.userid);
 			}else{
 				error_tips.fadeIn();

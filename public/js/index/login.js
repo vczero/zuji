@@ -26,13 +26,5 @@ define(['jquery', 'js/common/cookie'], function($, cookie){
 				error_tips.text(data.info);	
 			}
 		});
-	});
-	
-	
-	$('.logout div').on('click', function(){
-		$.post('/logout', function(data){
-			location.reload();
-		});
-	});
-	
+	});	
 });

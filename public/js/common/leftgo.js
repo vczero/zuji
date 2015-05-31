@@ -1,6 +1,6 @@
 
 define(['jquery'], function($){
-	var left_pannel = $('#left_pannel');
+	var left_pannel = $('.left_pannel');
 	var left_pannel_go = $('#left_pannel_go');
 	var middle = $('.middle');
 	var TIME = 266;
