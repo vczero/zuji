@@ -1,0 +1,45 @@
+<div class="story bs">
+	<script id="left_tpl" type="text/template">
+		<div class="story_tpl_wapper">
+	 	<div class="story_user">
+	 		<div class="story_avatar fl">
+	 			<img src="{%=avatar%}"/>
+	 		</div>
+	 		<div class="story_userinfo fl">
+	 			<div>{%=username%}</div>
+	 			<div>
+	 				<span>{%=time%}</span>
+	 				<span>
+	 					<a href="{%=weibo%}">微博</a>
+	 				</span>
+	 				<span>浏览({%=liulan%})</span>
+	 			</div>
+	 		</div>
+	 	</div>
+	 	<div class="story_text">
+	 		{%=content%}
+	 	</div>
+	 	<div class="story_post_div">
+	 		<div><textarea maxlength="200"></textarea></div>
+	 		<div class="story_post"><div class="fr">评论</div></div>
+	 	</div>
+	 	<div style="overflow:auto;width:580px;">
+	 		{%for(var i in comments){%}
+		 	<div class="story_comments">
+		 		<div class="fl story_comments_user">
+		 			<img src="{%=comments[i].avatar%}"/>
+		 		</div>
+		 		<div class="fl story_comments_content">
+		 			<div>{%=comments[i].content%}人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。</div>
+		 			<div>{%=comments[i].time%}</div>
+		 		</div>
+		 	</div>
+		 	{%}%}
+	 	</div>
+	 	<div class="story_hide">
+	 		<div class="mrl">转到个人页</div>
+	 	</div>
+	 	</div>
+	 </script>
+	 <div id="left_tpl_div"></div>
+</div>

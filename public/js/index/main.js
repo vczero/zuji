@@ -18,7 +18,7 @@ require([
 		'js/index/verifycode',
 		'js/common/searchinput',
 		'js/index/show',
-		'js/index/detail'
+		'js/index/story'
 ], function($) {
 	
 });
