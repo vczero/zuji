@@ -4,6 +4,10 @@
 	 	<div class="story_user">
 	 		<div class="story_avatar fl">
 	 			<img src="{%=avatar%}"/>
+	 			<div class="story_weixin bs">
+	 				<div class="story_weixin_name">{%=weixin || '没有留下微信名称'%}</div>
+	 				<div class="story_weixin_img"><img src="{%=weixin_pic%}"/></div>
+	 			</div>
 	 		</div>
 	 		<div class="story_userinfo fl">
 	 			<div style="font-size:17px;">{%=username%}</div>
@@ -16,7 +20,6 @@
 	 			</div>
 	 			<div style="font-size:13px;color:#1616FF;">
 	 				<span>我是一段签名：勇气可嘉，不可以固步自封</span>
-	 				
 	 			</div>
 	 		</div>
 	 	</div>

@@ -16,9 +16,15 @@ define(['jquery', 'underscore', 'js/common/mask'], function($, _, mask){
       				var render = _.template(tpl);
       				var html = render(data);
       				el.html(html); 
-      				
       				mask.show();
 					$('.story').fadeIn('slow');
+					//监听微信图片
+					$('.story_avatar').on('mouseenter', function(){
+						$('.story_weixin').fadeIn();
+					});
+					$('.story_avatar').on('mouseleave', function(){
+						$('.story_weixin').fadeOut();
+					});
     				}
     			});
     		}
@@ -33,6 +39,7 @@ define(['jquery', 'underscore', 'js/common/mask'], function($, _, mask){
     			mask.hide();
     			$('.story').fadeOut('slow');
     		}
+    		
     });
     
     //获取数据
@@ -52,7 +59,9 @@ define(['jquery', 'underscore', 'js/common/mask'], function($, _, mask){
     							weibo: user.weibo,
     							liulan: 120,
     							content: item.content,
-    							comments: item.comments
+    							comments: item.comments,
+    							weixin_pic: user.weixin_pic,
+    							weixin: user.weixin
     						};
     						callback(obj);
     					}else{

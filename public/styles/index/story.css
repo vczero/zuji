@@ -145,8 +145,36 @@
 }
 
 
+.story_weixin{
+	position:absolute;
+	top:40px;
+	left:10px;
+	background-color:#fff;
+	width:220px;
+	height:260px;
+	border:1px solid #ccc;
+	border-radius:3px;
+	display:none;
+}
 
+.story_weixin_name{
+	text-align:center;
+	width:100%;
+	height:30px;
+	line-height:30px;
+	font-size:16px;
+	font-weight:bold;
+}
 
+.story_weixin_img{
+	width:100%;
+}
+
+.story_weixin_img img{
+	margin-left:10px;
+	width:200px;
+	height:200px;
+}
 
 
 
