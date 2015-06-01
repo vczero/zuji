@@ -197,11 +197,9 @@ module.exports = {
 			});
 		}
 		userEngine.getUserByUserID(userid, function(err, items){
-			if(!err){
-				return res.send({
-					status: 1,
-					data: items[0]
-				});
+			if(!err && items.length){
+				items[0].status = 1;
+				return res.send(items[0]);
 			}else{
 				return res.send({
 					status: 0

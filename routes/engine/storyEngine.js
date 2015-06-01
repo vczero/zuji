@@ -33,6 +33,10 @@ module.exports = {
 	
 	getAllByLimit: function(num, callback){
 		db[TABLE_NAME].find({}).limit(num).toArray(callback);
+	},
+	
+	getByStoryId: function(storyid, callback){
+		db[TABLE_NAME].find({storyid: storyid}).limit(1).toArray(callback);
 	}
 };
 

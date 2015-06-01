@@ -2,115 +2,67 @@
 define(['jquery', 'underscore', 'js/common/mask'], function($, _, mask){
 	var el = $('#left_tpl_div');
     var tpl = $('#left_tpl').html();
- 
-    var data = {
-    		username: '大白',
-    		avatar: '/imgs/avatar.png',
-    		time: '2015-05-24',
-    		weibo: 'http://vczero.weibo.com',
-    		liulan: '300',
-    		content: '人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。而一个能成大事的人总会寻找自己的弱点，从自己的弱点上开刀。冲破弱点，一个连自己的缺陷都不能纠正的人，只能当失败者',
-		comments:[
-			{
-				avatar: '/imgs/avatar.png',
-				content: '人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。',
-				time: '2015-05-24'
-			},
-			{
-				avatar: '/imgs/avatar.png',
-				content: '人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。',
-				time: '2015-05-24'
-			},
-			{
-				avatar: '/imgs/avatar.png',
-				content: '人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。',
-				time: '2015-05-24'
-			},
-			{
-				avatar: '/imgs/avatar.png',
-				content: '人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。',
-				time: '2015-05-24'
-			},
-			{
-				avatar: '/imgs/avatar.png',
-				content: '人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。',
-				time: '2015-05-24'
-			},
-			{
-				avatar: '/imgs/avatar.png',
-				content: '人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。',
-				time: '2015-05-24'
-			},
-			{
-				avatar: '/imgs/avatar.png',
-				content: '人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。',
-				time: '2015-05-24'
-			},
-			{
-				avatar: '/imgs/avatar.png',
-				content: '人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。',
-				time: '2015-05-24'
-			},
-			{
-				avatar: '/imgs/avatar.png',
-				content: '人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。',
-				time: '2015-05-24'
-			},
-			{
-				avatar: '/imgs/avatar.png',
-				content: '人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。',
-				time: '2015-05-24'
-			},
-			{
-				avatar: '/imgs/avatar.png',
-				content: '人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。',
-				time: '2015-05-24'
-			},
-			{
-				avatar: '/imgs/avatar.png',
-				content: '人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。',
-				time: '2015-05-24'
-			},
-			{
-				avatar: '/imgs/avatar.png',
-				content: '人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。',
-				time: '2015-05-24'
-			},
-			{
-				avatar: '/imgs/avatar.png',
-				content: '人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。',
-				time: '2015-05-24'
-			},
-			{
-				avatar: '/imgs/avatar.png',
-				content: '人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。',
-				time: '2015-05-24'
-			}
-			
-		]
-    };
- 	
- 	var render = _.template(tpl);
-    var html = render(data);
-    el.html(html);
+      
     
     $('body').on('click', function(e){
     		e = e || event;
     		var _el = $(e.target || e.srcElement);
     		if(_el.hasClass('ucnter_get_detail')){
-    			mask.show();
-			$('.story').fadeIn('slow');
+    			var storyid = _el.attr('_storyid');
+    			var userid = _el.attr('_userid');
+    			
+    			getData(storyid, userid, function(data){
+    				if(data){
+      				var render = _.template(tpl);
+      				var html = render(data);
+      				el.html(html); 
+      				
+      				mask.show();
+					$('.story').fadeIn('slow');
+    				}
+    			});
     		}
     		
+    		//点击覆盖层，消失
     		if(_el[0].id === '___wlh_mask'){
+    			mask.hide();
+    			$('.story').fadeOut('slow');
+    		}
+    		//点击关闭按钮消失
+    		if(_el.hasClass('story_hide_close')){
     			mask.hide();
     			$('.story').fadeOut('slow');
     		}
     });
     
-    $('.story_hide').on('click', function(e){
-    		mask.hide();
-    		$('.story').fadeOut('slow');
-    });
+    //获取数据
+    function getData(storyid, userid, callback){
+    		var userPath = '/user/get?userid=' + userid;
+    		var storyPath = '/story/get/storyid?storyid=' + storyid;
+    	
+    		$.get(userPath, function(data){
+    			if(data.status){
+    				var user = data;
+    				$.get(storyPath, function(item){
+    					if(item.status){
+    						var obj = {
+    							username: user.username,
+    							avatar: user.avatar,
+    							time: item.time,
+    							weibo: user.weibo,
+    							liulan: 120,
+    							content: item.content,
+    							comments: item.comments
+    						};
+    						callback(obj);
+    					}else{
+    						callback(null);
+    					}
+		    		});
+    			}else{
+    				callback(null);
+    			}
+    		});
+    }
    
 });

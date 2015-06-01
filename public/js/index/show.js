@@ -38,29 +38,22 @@ define(['jquery', 'js/common/mapInit'], function($, map){
 		css += 'border-radius:3px;margin-bottom:-10px;width:100px;cursor:pointer;}';
 		css += '</style>';
 		
-		
 		var path = '/user/get?userid=' + item.userid;
 		$.get(path, function(data){
 			if(data.status){
-				var user = data.data;
+				var user = data;
 				var str = '<div style="max-height:200px;">';
 				str += '<div class="add_author_date"><span>作者：</span>' + user.username || '用户未公开';
-				str += '<span>日期:</span>' + item.time + '</div>';
-				str += '<div class="add_author_date"><span>地点:</span>' + item.locname + '</div>';	
+				str += '<span>日期：</span>' + item.time + '</div>';
+				str += '<div class="add_author_date"><span>地点：</span>' + item.locname + '</div>';	
 				str += '<div class="add_content">行记：' + item.content + '</div>';
 				str += '</div>';
 				
-				var comment = '<div class="add_content">';
-				comment += '<div>评论:</div>';
-				for(var i in item.coments){
-					comment += '<div>' + item.coments[i] + '</div>';
-				}
-				comment += '</div>';
-				
-				var btn = '<div style="width:100%;hieght:30px;">';
-				btn += '<div class="add_delete_btn ucnter_get_detail mrl">查看详情</div>';
+				var btn = '<div style="width:100%;hieght:30px;margin-top:20px;">';
+				btn += '<div class="add_delete_btn ucnter_get_detail mrl"'; 
+				btn += '_storyid="' + item.storyid + '" _userid="' + item.userid + '">查看详情</div>';
 				btn += '</div>';
-				callback(css + str + comment + btn);
+				callback(css + str + btn);
 			}
 		});
 	}

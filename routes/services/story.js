@@ -8,6 +8,7 @@ module.exports = {
 		app.post('/story/create', this.createStory);
 		app.get('/story/get', this.getByUser);
 		app.get('/story/get/400', this.getAll400);
+		app.get('/story/get/storyid', this.getByStoryId);
 	},
 	
 	createStory: function(req, res){
@@ -74,6 +75,20 @@ module.exports = {
 					status: 1,
 					data: items	
 				});
+			}else{
+				return res.send({
+					status: 0
+				});
+			}
+		});
+	},
+	
+	getByStoryId: function(req, res){
+		var id = req.param('storyid');
+		storyEngine.getByStoryId(id, function(err, items){
+			if(!err && items.length){
+				items[0].status = 1;
+				return res.send(items[0]);
 			}else{
 				return res.send({
 					status: 0
