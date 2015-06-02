@@ -27,17 +27,18 @@
 	 		{%=content%}
 	 	</div>
 	 	<div class="story_post_div">
-	 		<div><textarea maxlength="200"></textarea></div>
+	 		<div><textarea id="story_text_val" maxlength="200" _storyid="{%=storyid%}"></textarea></div>
 	 		<div class="story_post"><div class="fr">评论</div></div>
 	 	</div>
 	 	<div style="overflow:auto;width:580px;">
 	 		{%for(var i in comments){%}
 		 	<div class="story_comments">
 		 		<div class="fl story_comments_user">
-		 			<img src="{%=comments[i].avatar%}"/>
+		 			<!--<img src="{%=comments[i].avatar%}"/>-->
+		 			<div class="story_comments_user_num">{%=parseInt(i)+1%}</div>
 		 		</div>
 		 		<div class="fl story_comments_content">
-		 			<div>{%=comments[i].content%}人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。人人都有弱点，不能成大事的人总是固守着自己的弱点，一生很难有转变。</div>
+		 			<div>{%=comments[i].comment%}</div>
 		 			<div>{%=comments[i].time%}</div>
 		 		</div>
 		 	</div>

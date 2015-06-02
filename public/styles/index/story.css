@@ -95,16 +95,17 @@
 }
 
 .story_comments{
-	width:580px;
-	min-height:70px;
+	width:570px;
+	float: left;
 	font-size:13px;
 	margin-top:20px;
 	margin-bottom:10px;
 	color:#79797A;
+	border:1px dashed #ccc;
 }
 
 .story_comments_user{
-	width:50px;
+	width:35px;
 	height:50px;
 	overflow:hidden;
 }
@@ -140,7 +141,6 @@
 	text-align:center;
 	line-height:30px;
 	cursor:pointer;
-	bottom:20px;
 	position:absolute;
 }
 
@@ -153,7 +153,7 @@
 	width:220px;
 	height:260px;
 	border:1px solid #ccc;
-	border-radius:3px;
+	border-radius:5px;
 	display:none;
 }
 
@@ -176,6 +176,17 @@
 	height:200px;
 }
 
+.story_comments_user_num{
+	width:30px;
+	height:30px;
+	font-style: italic;
+	text-align:center;
+	line-height:30px;
+	border-radius:15px;
+	background-color:#00BCC7;
+	color:#fff;
+	/*border:1px solid #ccc;*/
+}
 
 
 

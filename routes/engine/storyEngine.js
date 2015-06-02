@@ -37,6 +37,16 @@ module.exports = {
 	
 	getByStoryId: function(storyid, callback){
 		db[TABLE_NAME].find({storyid: storyid}).limit(1).toArray(callback);
+	},
+	
+	updateComments: function(storyid, comments, callback){
+		db[TABLE_NAME].update(
+			{storyid: storyid},
+			{$push: comments},
+			function(err, item){
+				callback(err, item);
+			}
+		);
 	}
 };
 

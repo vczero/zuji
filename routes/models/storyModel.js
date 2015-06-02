@@ -13,7 +13,6 @@ module.exports.Story = {
 
 module.exports.StoryComment = {
 	userid: '',			/*用户id*/
-	username: '',		/*用户名*/
 	comment: '',			/*评论*/
 	time: ''				/*时间*/
 };

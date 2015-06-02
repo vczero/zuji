@@ -2,7 +2,7 @@
 
 define(['jquery'], function($){
 	
-	window.alert = function(text, opts, hidetime){
+	window.alert = function(text, opts, hidetime, zIndex){
 		var str = '<div id="___wlh_alter" style="width:310px;height:150px;z-index:9999;background-color:#fff;">';
 		str += '<div style="color:#1AB6FF;font-size:16px;margin-top:10px;margin-left:10px;line-height:25px;">提示</div>';
 		str += '<div style="width:280px;border-top:1px solid #ccc;margin-left:5px;"></div>';
@@ -16,6 +16,11 @@ define(['jquery'], function($){
 		el.css('border', '1px solid #ddd');
 		el.css('borderRadius', '2px');
 		el.css(opts);
+		
+		if(zIndex){
+			el.css('zIndex', zIndex + 1);
+			mask.css('zIndex', zIndex);
+		}
 		
 		mask.css('opacity', 0.6);
 		mask.css('position', 'absolute');
